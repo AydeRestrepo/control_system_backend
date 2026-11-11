@@ -1,0 +1,9 @@
+*.html linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+*.json linguist-vendored
+*.md linguist-vendored
+*.xml linguist-vendored
+*.properties linguist-vendored
+
+*.java linguist-detectable=true

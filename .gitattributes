@@ -1,9 +1,19 @@
+# Force Java as the default
+*.java linguist-detectable=true
+
+# Ignore everything that isn't Java
 *.html linguist-vendored
 *.css linguist-vendored
 *.js linguist-vendored
 *.json linguist-vendored
-*.md linguist-vendored
 *.xml linguist-vendored
 *.properties linguist-vendored
+*.md linguist-vendored
+*.yml linguist-vendored
+*.yaml linguist-vendored
 
-*.java linguist-detectable=true
+# Ignore IntelliJ folders and builds
+.idea/* linguist-vendored
+target/* linguist-vendored
+src/main/resources/static/* linguist-vendored
+src/main/resources/templates/* linguist-vendored

@@ -60,8 +60,14 @@ control_system_backend/
   "name": "Ayde Natalia Restrepo Vizcaya",
   "checkInTime": "2026-11-10T19:24:39",
   "status": "ACTIVE"
-}Response 401: Si el código no existe.json{ "message": "Código no encontrado" }
+}
 ```
+**Response 401:**  
+  Si el código no existe.
+```json
+{ "message": "Código no encontrado" }
+```
+
 ### 2. Logout - Check-Out
 **POST** `/api/auth
 **Request:**
@@ -94,7 +100,4 @@ curl -X POST http://localhost:8080/api/auth/login \
 # Logout
 curl -X POST http://localhost:8080/api/auth/logout \
   -H "Content-Type: application/json" \
-  -d '{"sessionId":2}'Estado Actual - Entrega
-Entidades Employee, Session, StatusEmployeeRepositorios con búsqueda por códigoAuthController con login y logoutPersistencia en PostgreSQL verificadaCálculo automático de totalSecondsFrontend Angular - Login por código (en construcción)Listado de sesiones activas en frontendReporte de horas por empleadoFlujo del Sistema
-Empleado digita su código (ej: E001)Backend busca el código en employeesSi existe, crea una Session con status=ACTIVE y checkInTime=now()Al salir, se llama a logout con el sessionIdBackend pone checkOutTime=now(), calcula totalSeconds y cambia a INACTIVEAutores
-Ayde Natalia Restrepo Vizcaya
+  -d '{"sessionId":2}

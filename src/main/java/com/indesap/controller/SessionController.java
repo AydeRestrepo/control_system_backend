@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/sessions")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class SessionController {
 
@@ -21,7 +22,7 @@ public class SessionController {
         try {
             return ResponseEntity.ok(service.initSession(body.get("code")));
         } catch (SessionException exception) {
-            return ResponseEntity.badRequest().body(Map.of("Error", exception.getMessage()));
+            return ResponseEntity.badRequest().body(Map.of("error", exception.getMessage()));
         }
     }
 
@@ -30,7 +31,7 @@ public class SessionController {
         try {
             return ResponseEntity.ok(service.finallySession(body.get("code")));
         } catch (SessionException exception) {
-            return ResponseEntity.badRequest().body(Map.of("Error", exception.getMessage()));
+            return ResponseEntity.badRequest().body(Map.of("error", exception.getMessage()));
         }
     }
 
@@ -39,7 +40,7 @@ public class SessionController {
         try {
             return ResponseEntity.ok(service.createEmployed(body.get("code"), body.get("name")));
         } catch (EmployeeException exception) {
-            return ResponseEntity.badRequest().body(Map.of("Error", exception.getMessage()));
+            return ResponseEntity.badRequest().body(Map.of("error", exception.getMessage()));
         }
     }
 }
